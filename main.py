@@ -31,10 +31,10 @@ def guardar_dados(df):
     df.to_csv(DB_FILE, index=False)
 
 # Configuração da página da aplicação
-st.set_page_config(page_title="EcoTrack - Gestor de Alimentos", page_icon="🌱", layout="wide")
+st.set_page_config(page_title="AlgorithmicFresh - Gestor de Alimentos", page_icon="🌱", layout="wide")
 
 # Título principal da aplicação
-st.title("🌱 EcoTrack - Reduza o Desperdício")
+st.title("🌱 AlgorithmicFresh - Reduza o Desperdício")
 st.subheader("O seu gestor de validade inteligente")
 
 # Inicializar estado da sessão para armazenar os alimentos
