@@ -43,7 +43,7 @@ if 'inventario' not in st.session_state:
     st.session_state.inventario = carregar_dados()
 
 # Categorias predefinidas para organização dos alimentos
-CATEGORIAS = ["Frigorífico", "Despensa", "Congelador", "Frutaria", "Outros"]
+CATEGORIAS = ["Frigorífico", "Despensa", "Congelador"]
 
 # Barra lateral para entrada de novos dados
 with st.sidebar:
