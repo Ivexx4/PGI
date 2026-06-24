@@ -180,7 +180,7 @@ else:
 # Secção informativa para o utilizador com dicas de sustentabilidade
 with st.expander("💡 Dicas para reduzir o desperdício"):
     st.write("""
-    1. **Planeie as refeições:** Veja o que tem no EcoTrack antes de ir às compras.
+    1. **Planeie as refeições:** Veja o que tem no AlgorithmicFresh antes de ir às compras.
     2. **Primeiro a entrar, primeiro a sair:** Coloque os itens mais antigos à frente no frigorífico.
     3. **Congele:** Muitos alimentos podem ser congelados se vir que não os vai consumir a tempo.
     4. **Organize por categorias:** Use as categorias para saber exatamente onde procurar os seus alimentos.

@@ -1,6 +1,6 @@
-# 🌱 EcoTrack - Gestor de Desperdício Alimentar
+# 🌱 AlgorithmicFresh - Gestor de Desperdício Alimentar
 
-O **EcoTrack** é uma aplicação inteligente desenvolvida com Streamlit para ajudar os utilizadores a gerir a validade dos seus alimentos, reduzindo o desperdício e promovendo o consumo consciente.
+O **AlgorithmicFresh** é uma aplicação inteligente desenvolvida com Streamlit para ajudar os utilizadores a gerir a validade dos seus alimentos, reduzindo o desperdício e promovendo o consumo consciente.
 
 ## 🚀 Funcionalidades
 
