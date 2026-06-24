@@ -10,6 +10,8 @@ O **EcoTrack** é uma aplicação inteligente desenvolvida com Streamlit para aj
 - **Sistema de Filtros e Busca**: Encontre rapidamente o que precisa através de filtros por categoria ou busca por nome.
 - **Métricas em Tempo Real**: Visualize rapidamente o total de itens, quantos estão próximos da validade (3 dias) e quantos já expiraram.
 - **Gestão de Itens**: Remova itens individualmente ou limpe todo o inventário quando necessário.
+- **Botão Consumir**: Remova rapidamente um item do inventário ao consumi-lo, mantendo o ficheiro atualizado.
+- **Botão Congelar**: Prolongue a validade de um produto em 90 dias e mova-o automaticamente para a categoria "Congelador".
 - **Visualização Colorida**:
   - 🟠 **Laranja**: Alimentos que vencem em 3 dias ou menos.
   - 🔴 **Vermelho**: Alimentos já fora do prazo de validade.

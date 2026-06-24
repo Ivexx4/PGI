@@ -86,18 +86,48 @@ if not df.empty:
 
     st.write("### O seu Inventário")
     
-    def colorir_validade(row):
-        if row['Dias para Vencer'] < 0:
-            return ['background-color: #ff4b4b'] * len(row)
-        elif row['Dias para Vencer'] <= 3:
-            return ['background-color: #ffa500'] * len(row)
-        return [''] * len(row)
-
     # Ordenar por data de validade
     df_visual = df.sort_values(by="Validade")
     
-    # Exibir a tabela formatada
-    st.dataframe(df_visual.style.apply(colorir_validade, axis=1), use_container_width=True)
+    # Exibir o cabeçalho da tabela personalizada
+    cols = st.columns([2, 1, 1, 1, 1, 1])
+    cols[0].write("**Produto**")
+    cols[1].write("**Qtd**")
+    cols[2].write("**Categoria**")
+    cols[3].write("**Validade**")
+    cols[4].write("**Ações**")
+
+    for idx, row in df_visual.iterrows():
+        # Determinar cor baseada na validade
+        cor = ""
+        if row['Dias para Vencer'] < 0:
+            cor = "🔴"
+        elif row['Dias para Vencer'] <= 3:
+            cor = "🟠"
+        
+        c1, c2, c3, c4, c5, c6 = st.columns([2, 1, 1, 1, 1, 1])
+        c1.write(f"{cor} {row['Produto']}")
+        c2.write(row['Quantidade'])
+        c3.write(row['Categoria'])
+        c4.write(row['Validade'].strftime('%d/%m/%Y'))
+        
+        # Botão Consumir
+        if c5.button("Consumir", key=f"cons_{idx}"):
+            st.session_state.inventario = st.session_state.inventario.drop(idx).reset_index(drop=True)
+            guardar_dados(st.session_state.inventario)
+            st.success(f"{row['Produto']} consumido!")
+            st.rerun()
+            
+        # Botão Congelar
+        if c6.button("Congelar", key=f"cong_{idx}"):
+            nova_validade = date.today() + pd.Timedelta(days=90)
+            st.session_state.inventario.at[idx, 'Validade'] = nova_validade
+            st.session_state.inventario.at[idx, 'Categoria'] = "Congelador"
+            guardar_dados(st.session_state.inventario)
+            st.success(f"{row['Produto']} congelado e movido para o Congelador! Nova validade: {nova_validade.strftime('%d/%m/%Y')}")
+            st.rerun()
+
+    st.markdown("---")
 
     # Gestão de Itens (Remover)
     with st.expander("🗑️ Gerir / Remover Itens"):
