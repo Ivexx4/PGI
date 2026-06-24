@@ -53,7 +53,7 @@ with st.sidebar:
         col_q, col_c = st.columns(2)
         quantidade = col_q.number_input("Qtd", min_value=1, value=1)
         categoria = col_c.selectbox("Categoria", CATEGORIAS)
-        data_validade = st.date_input("Data de Validade")
+        data_validade = st.date_input("Data de Validade", min_value=date.today())
         submetido = st.form_submit_button("Registar")
         
         if submetido:
